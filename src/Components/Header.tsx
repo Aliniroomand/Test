@@ -13,7 +13,7 @@ interface HeaderProps {}
 
 const Header: React.FC<HeaderProps> = () => {
   return (
-    <header className="flex flex-row justify-between items-center w-[1260px] h-[84px] top-[69px] left-[90px]">
+    <header className="fixed flex flex-row justify-between items-center w-[1260px] h-[84px] top-[69px] left-[90px] font-bold">
 {/* section for logo & categories & contact &social Medias */}
             <section className=' w-3/6 flex flex-row justify-between items-center'>
                 <Link to="/">

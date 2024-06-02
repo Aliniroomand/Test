@@ -11,10 +11,10 @@ import ShoppingCart from "./Components/ShoppingCart";
 const routes:RouteObject[] =[
     {
         path:"/",
-        element:<App/>,
+        element:<LandingPage/>,
         errorElement:<ErrorPage/>,
         children:[
-            {path:"landingPage",element:<LandingPage/>},
+            
             {path:"categories",element:<Categories/>},
             {path:"contactUs",element:<ContactUs/>},
             {path:"account",element:<AccountPage/>},

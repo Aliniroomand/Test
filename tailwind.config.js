@@ -14,6 +14,9 @@ export default {
         accent1:"#1BCF92",
         accent2:"#E55249",
         accent3:"#FFC839"
+      },
+      fontFamily:{
+        "product-sans":['Product Sans', 'sans-serif'],
       }
     },
   },

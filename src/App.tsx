@@ -1,9 +1,11 @@
-import LandingPage from './Pages/LandingPage';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import routes from './routes.tsx'
 
+const route =createBrowserRouter(routes);
 
 const App = () => {
   return(
-    <LandingPage/>
+    <RouterProvider router={route}/>
   )
   
 };
