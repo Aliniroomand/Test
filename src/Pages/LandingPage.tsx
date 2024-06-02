@@ -1,6 +1,7 @@
 import Header from '../Components/Header';
 import { Outlet } from 'react-router-dom';
 import SearchPart from '../Components/SearchPart';
+import PopularCategory from '../Components/PopularCategory';
 
 const LandingPage = () => {
     return (
@@ -9,6 +10,7 @@ const LandingPage = () => {
          {/* <Outlet/> */}
          <section>
             <SearchPart/>
+            <PopularCategory/>
          </section>
         </main>
     );
