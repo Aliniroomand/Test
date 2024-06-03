@@ -13,14 +13,14 @@ interface HeaderProps {}
 
 const Header: React.FC<HeaderProps> = () => {
   return (
-    <header className="fixed flex flex-row justify-between items-center w-[1260px] h-[84px] top-[69px] left-[90px] font-bold">
+    <header className="fixed flex flex-row justify-between items-center w-[1260px] h-[84px] top-[36px] left-[60px] font-bold z-50">
 {/* section for logo & categories & contact &social Medias */}
             <section className=' w-3/6 flex flex-row justify-between items-center'>
                 <Link to="/">
-                <img src={logo} alt="logo" />
+                <img  src={logo} alt="logo" />
                 </Link>
                 <Link to="categories" className=" flex flex-row text-textColor hover:text-accent2 transition-all hover:scale-110">
-                    <img src={hamberMenu} alt="hamberMenu" />
+                    <img  src={hamberMenu} alt="hamberMenu" />
                     <h3>
                     Categories
                     </h3>

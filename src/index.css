@@ -15,6 +15,8 @@
     font-weight: 700;
     font-style: normal;
   }
+
+  
   
 @layer base{
     html{
@@ -24,3 +26,27 @@
         
     }
 }
+
+
+@keyframes wobble {
+  0% {
+      transform:translate(0);
+          }
+          20% {
+              transform:translate(5px,-5px);
+          }
+          40% {
+              transform:translate(5px,5px);
+          }
+          60% {
+              transform:translate(-5px,5px);
+          }
+          80% {
+              transform:translate(-5px,-5px);
+          }
+          100% {
+              transform:translate(0);
+          }}
+          .wobble {
+          animation: wobble 0.5s ease-in-out infinite ;
+      }

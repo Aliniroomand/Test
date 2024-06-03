@@ -5,7 +5,9 @@ import inputBG from '../assets/Images/search part/inputBG.svg'
 
 const SearchPart = () => {
     return (
-    <section className=" absolute w-[539px] h-[108px] top-[213px] left-[92px] flex flex-col ">
+    <section className='absolute top-[180px] left-[62px]'>
+
+    <section className=" relative w-[539px] h-[108px] flex flex-col ">
         <section className='flex flex-row justify-between items-center w-[339px] h-[24px] '>
             <img src={locationLogo} alt="locationLogo" />
             <h3 className=" text-base font-normal border-r-[1px] pr-1">My Location</h3>  
@@ -20,6 +22,7 @@ const SearchPart = () => {
                 Search
                 </h1>
             </button>
+    </section>
 
 
         </section>

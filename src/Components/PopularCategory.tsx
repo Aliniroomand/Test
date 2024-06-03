@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
+import { Link } from 'react-router-dom';
 //Images
 import activeChicken from "../assets/Images/popular category/activechicken.svg" 
 import deactiveChicken from "../assets/Images/popular category/deactivechicken.svg" 
@@ -14,46 +15,57 @@ import deactiveSandwich from "../assets/Images/popular category/deactivesandwich
 import activeSandwich from "../assets/Images/popular category/activesandwich.svg" 
 
 
-// Images
-const images = {
-    pizza: { active: activePizza, inactive: deactivePizza },
-    chicken: { active: activeChicken, inactive: deactiveChicken },
-    fries: { active: activeFries, inactive: deactiveFries },
-    hamber: { active: activeHamber, inactive: deactiveHamber },
-    noodle: { active: activeNoodle, inactive: deactiveNoodle },
-    sandwich: { active: activeSandwich, inactive: deactiveSandwich },
-  };
   
   const PopularCategory = () => {
     const [active, setActive] = useState({
-      chicken: false,
-      fries: false,
-      hamber: true, 
-      noodle: false,
-      sandwich: false,
-      pizza: false,
+      Chicken: false,
+      Fries: false,
+      Hamber: true, 
+      Noodle: false,
+      Pizza: false,
+      Sandwich: false,
     });
-  
-    const handleClick = (category) => {
-    
-    };
-  
-    const categoryIcons = Object.entries(images).map(([categoryId, imageObj]) => (
-      <button
-        key={categoryId}
-        className={`category-icon ${active[categoryId] ? 'active' : ''}`}
-        onClick={() => handleClick(categoryId)}
-      >
-        <img src={active[categoryId] ? imageObj.active : imageObj.inactive} alt={categoryId} />
-      </button>
-    ));
-  
+    const handleClick = (i) => {
+      setActive({[i.target.id]:true});
+    }  
     return (
-      <section>
-        <h1>Popular Category</h1>
-        <div className="category-icons">{categoryIcons}</div>
+      <section className='absolute w-[670px] h-[179px] top-[357px] left-[60px]'>
+        <h1 className='text-secondary2'>Popular Category</h1>
+        <section className='flex flex-row '>
+            <Link 
+              to='' onClick={handleClick} className='w-[100px] h-[150px] bg-secondary1 grid place-items-center rounded-full mx-3' id='Chicken' >
+              <img className=' w-[54px] h-[54px]'  src={`${active.Chicken ? activeChicken : deactiveChicken }`} id='Chicken' alt="Chicken part" />  
+            </Link>
+            
+            <Link 
+              to='' onClick={handleClick} className='bg-secondary1 grid place-items-center rounded-full mx-3 w-[100px] h-[150px]' id='Fries' >
+              <img className='w-[54px] h-[54px]' src={`${active.Fries ? activeFries : deactiveFries }`} id='Fries' alt="Fries part" />  
+            </Link>
+            
+            <Link 
+              to='' onClick={handleClick} className='bg-secondary1 grid place-items-center rounded-full mx-3 w-[100px] h-[150px]' id='Hamber' >
+              <img className='w-[54px] h-[54px]' src={`${active.Hamber ? activeHamber : deactiveHamber }`} id='Hamber' alt="Hamber part" />  
+            </Link>
+            
+            <Link 
+              to='' onClick={handleClick} className='bg-secondary1 grid place-items-center rounded-full mx-3 w-[100px] h-[150px]' id='Noodle' >
+              <img className='w-[54px] h-[54px]' src={`${active.Noodle ? activeNoodle : deactiveNoodle }`} id='Noodle' alt="Noodle part" />  
+            </Link>
+            
+            <Link 
+              to='' onClick={handleClick} className='bg-secondary1 grid place-items-center rounded-full mx-3 w-[100px] h-[150px]' id='Pizza' >
+              <img className='w-[54px] h-[54px]' src={`${active.Pizza ? activePizza : deactivePizza }`} id='Pizza' alt="Pizza part" />  
+            </Link>
+            
+            <Link 
+              to='' onClick={handleClick} className='bg-secondary1 grid place-items-center rounded-full mx-3 w-[100px] h-[150px]' id='Sandwich' >
+              <img className='w-[54px] h-[54px]' src={`${active.Sandwich ? activeSandwich : deactiveSandwich }`} id='Sandwich' alt="Sandwich part" />  
+            </Link>
+            
+          </section>
       </section>
     );
   };
+
   
   export default PopularCategory;
