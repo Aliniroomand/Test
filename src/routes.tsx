@@ -5,7 +5,6 @@ import ErrorPage from "./Pages/ErrorPage";
 import Categories from "./Components/Categories";
 import ContactUs from "./Pages/ContactUs";
 import AccountPage from "./Pages/AccountPage";
-import App from "./App";
 import ShoppingCart from "./Components/ShoppingCart";
 
 const routes:RouteObject[] =[
