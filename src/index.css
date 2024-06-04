@@ -2,32 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
+
+  /* Fonts */
 @font-face {
-    font-family: "Product Sans";
+    font-family: "ProductSans";
     src: url('./assets/fonts/ProductSans-Regular.ttf') format("truetype");
     font-weight: 400;
     font-style: normal;
   }
   
   @font-face {
-    font-family: "Product Sans";
+    font-family: "Product Sans-Bold";
     src: url('./assets/fonts/ProductSans-Bold.ttf') format("truetype");
     font-weight: 700;
     font-style: normal;
   }
 
-  
-  
+  /*_______Fonts_______*/
+
 @layer base{
     html{
         width: 1440px;
         height: 931px;
-        font-family: "Product Sans", sans-serif;
-        
+        font-family: "ProductSans";
     }
 }
 
 
+/* Animations */
 @keyframes wobble {
   0% {
       transform:translate(0);
@@ -47,6 +49,76 @@
           100% {
               transform:translate(0);
           }}
-          .wobble {
+        .wobble {
           animation: wobble 0.5s ease-in-out infinite ;
-      }
+        }
+        
+@keyframes fingerAnimation{
+            0% {
+                transform:translateY(0);
+            }
+            10% {
+                transform:translateY(-8px);
+            }
+            20% {
+                transform:translateY(8px);
+            }
+            30% {
+                transform:translateY(-8px)rotateX(60deg);
+            }
+            40% {
+                transform:translateY(8px);
+            }
+            50% {
+                transform:translateY(-8px);
+            }
+            60% {
+                transform:translateY(8px);
+            }
+            70% {
+                transform:translateY(-8px);
+            }
+            80% {
+                transform:translateY(6.4px);
+            }
+            90% {
+                transform:translateY(-6.4px);
+            }
+            100% {
+                transform:translateY(0);
+            }
+}
+        .fingerAnimation {
+            animation: fingerAnimation 1s linear 0s 5 normal none;}
+
+
+
+@keyframes HamberAnimation {
+			
+                0% {
+                    transform:scale3d(1,1,1);
+                }
+                30% {
+                    transform:scale3d(1.05,.95,1);
+                }
+                40% {
+                    transform:scale3d(.95,1.05,1);
+                }
+                50% {
+                    transform:scale3d(1.05,.95,1);
+                }
+                65% {
+                    transform:scale3d(.95,1.05,1);
+                }
+                75% {
+                    transform:scale3d(1.05,.95,1);
+                }
+                100% {
+                    transform:scale3d(1,1,1);
+                }}
+
+        .HamberAnimation{
+            animation: HamberAnimation 5s linear 0s infinite normal forwards;
+        }
+
+/*____animation______ */

@@ -3,6 +3,7 @@ import { Outlet } from 'react-router-dom';
 import SearchPart from '../Components/SearchPart';
 import PopularCategory from '../Components/PopularCategory';
 import RecentlyPreOrders from '../Components/RecentlyPreOrders';
+import ImagesPart from '../Components/ImagesPart';
 
 const LandingPage = () => {
     return (
@@ -13,6 +14,7 @@ const LandingPage = () => {
             <SearchPart/>
             <PopularCategory/>
             <RecentlyPreOrders/>
+            <ImagesPart/>
          </section>
         </main>
     );

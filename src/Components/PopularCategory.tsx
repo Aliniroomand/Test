@@ -15,9 +15,18 @@ import deactiveSandwich from "../assets/Images/popular category/deactivesandwich
 import activeSandwich from "../assets/Images/popular category/activesandwich.svg" 
 
 
+
+type CategoryState = {
+  Chicken: boolean;
+  Fries: boolean;
+  Hamber: boolean;
+  Noodle: boolean;
+  Pizza: boolean;
+  Sandwich: boolean;
+};
   
   const PopularCategory = () => {
-    const [active, setActive] = useState({
+    const [active, setActive] = useState<CategoryState>({
       Chicken: false,
       Fries: false,
       Hamber: true, 
@@ -25,41 +34,51 @@ import activeSandwich from "../assets/Images/popular category/activesandwich.svg
       Pizza: false,
       Sandwich: false,
     });
-    const handleClick = (i) => {
-      setActive({[i.target.id]:true});
-    }  
+    
+    const handleClick = (e: React.MouseEvent<HTMLElement>) => {
+      const { id } = e.currentTarget;
+      setActive({
+        Chicken: false,
+        Fries: false,
+        Hamber: false,
+        Noodle: false,
+        Pizza: false,
+        Sandwich: false,
+        [id]: true,
+      });
+    };
     return (
       <section className='absolute w-[670px] h-[179px] top-[357px] left-[60px]'>
         <h1 className='text-secondary2'>Popular Category</h1>
         <section className='flex flex-row '>
             <Link 
-              to='' onClick={handleClick} className='w-[100px] h-[150px] bg-secondary1 grid place-items-center rounded-full mx-3' id='Chicken' >
-              <img className=' w-[54px] h-[54px]'  src={`${active.Chicken ? activeChicken : deactiveChicken }`} id='Chicken' alt="Chicken part" />  
+              to='' onClick={handleClick} className='w-[100px] h-[150px] bg-secondary1 grid place-items-center rounded-full mx-3 group' id='Chicken' >
+              <img className=' w-[54px] h-[54px] group-hover:scale-125 transition-all'  src={`${active.Chicken ? activeChicken : deactiveChicken }`} id='Chicken' alt="Chicken part" />  
             </Link>
             
             <Link 
-              to='' onClick={handleClick} className='bg-secondary1 grid place-items-center rounded-full mx-3 w-[100px] h-[150px]' id='Fries' >
-              <img className='w-[54px] h-[54px]' src={`${active.Fries ? activeFries : deactiveFries }`} id='Fries' alt="Fries part" />  
+              to='' onClick={handleClick} className='bg-secondary1 grid place-items-center rounded-full mx-3 w-[100px] h-[150px] group' id='Fries' >
+              <img className='w-[54px] h-[54px] group-hover:scale-125 transition-all' src={`${active.Fries ? activeFries : deactiveFries }`} id='Fries' alt="Fries part" />  
             </Link>
             
             <Link 
-              to='' onClick={handleClick} className='bg-secondary1 grid place-items-center rounded-full mx-3 w-[100px] h-[150px]' id='Hamber' >
-              <img className='w-[54px] h-[54px]' src={`${active.Hamber ? activeHamber : deactiveHamber }`} id='Hamber' alt="Hamber part" />  
+              to='' onClick={handleClick} className='bg-secondary1 grid place-items-center rounded-full mx-3 w-[100px] h-[150px] group' id='Hamber' >
+              <img className='w-[54px] h-[54px] group-hover:scale-125 transition-all' src={`${active.Hamber ? activeHamber : deactiveHamber }`} id='Hamber' alt="Hamber part" />  
             </Link>
             
             <Link 
-              to='' onClick={handleClick} className='bg-secondary1 grid place-items-center rounded-full mx-3 w-[100px] h-[150px]' id='Noodle' >
-              <img className='w-[54px] h-[54px]' src={`${active.Noodle ? activeNoodle : deactiveNoodle }`} id='Noodle' alt="Noodle part" />  
+              to='' onClick={handleClick} className='bg-secondary1 grid place-items-center rounded-full mx-3 w-[100px] h-[150px] group' id='Noodle' >
+              <img className='w-[54px] h-[54px] group-hover:scale-125 transition-all' src={`${active.Noodle ? activeNoodle : deactiveNoodle }`} id='Noodle' alt="Noodle part" />  
             </Link>
             
             <Link 
-              to='' onClick={handleClick} className='bg-secondary1 grid place-items-center rounded-full mx-3 w-[100px] h-[150px]' id='Pizza' >
-              <img className='w-[54px] h-[54px]' src={`${active.Pizza ? activePizza : deactivePizza }`} id='Pizza' alt="Pizza part" />  
+              to='' onClick={handleClick} className='bg-secondary1 grid place-items-center rounded-full mx-3 w-[100px] h-[150px] group' id='Pizza' >
+              <img className='w-[54px] h-[54px] group-hover:scale-125 transition-all' src={`${active.Pizza ? activePizza : deactivePizza }`} id='Pizza' alt="Pizza part" />  
             </Link>
             
             <Link 
-              to='' onClick={handleClick} className='bg-secondary1 grid place-items-center rounded-full mx-3 w-[100px] h-[150px]' id='Sandwich' >
-              <img className='w-[54px] h-[54px]' src={`${active.Sandwich ? activeSandwich : deactiveSandwich }`} id='Sandwich' alt="Sandwich part" />  
+              to='' onClick={handleClick} className='bg-secondary1 grid place-items-center rounded-full mx-3 w-[100px] h-[150px] group' id='Sandwich' >
+              <img className='w-[54px] h-[54px] group-hover:scale-125 transition-all' src={`${active.Sandwich ? activeSandwich : deactiveSandwich }`} id='Sandwich' alt="Sandwich part" />  
             </Link>
             
           </section>
