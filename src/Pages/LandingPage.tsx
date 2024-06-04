@@ -1,5 +1,4 @@
 import Header from '../Components/Header';
-import { Outlet } from 'react-router-dom';
 import SearchPart from '../Components/SearchPart';
 import PopularCategory from '../Components/PopularCategory';
 import RecentlyPreOrders from '../Components/RecentlyPreOrders';
